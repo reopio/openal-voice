@@ -4,11 +4,11 @@ A program using openal to achieve the function of real-time voicing between two 
 
 # Usage
 
-run alserver via
+Just run alserver via
 `./alserver`
 in powershell
 
-then run alclient via
+Then run alclient via
 `./alclient [server ip] [server port]`
 to start.
 
