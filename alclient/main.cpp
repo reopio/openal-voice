@@ -6,8 +6,8 @@
 #include <windows.h>
 
 //openal
-#include "../lib/include/al.h"
-#include "../lib/include/alc.h"
+#include "../openal-lib/include/al.h"
+#include "../openal-lib/include/alc.h"
 
 //thread
 #include <thread>
@@ -16,7 +16,7 @@
 #pragma comment(lib, "ws2_32.lib")
 
 //openal lib
-#pragma comment(lib,"../lib/Win64/OpenAL32.lib")
+#pragma comment(lib,"../openal-lib/Win64/OpenAL32.lib")
 
 //def
 //#define CLPORT 5666

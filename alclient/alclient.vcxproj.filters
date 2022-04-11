@@ -20,22 +20,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\lib\include\efx.h">
+    <ClInclude Include="..\openal-lib\include\efx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\include\efx-creative.h">
+    <ClInclude Include="..\openal-lib\include\efx-creative.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\include\EFX-Util.h">
+    <ClInclude Include="..\openal-lib\include\EFX-Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\include\xram.h">
+    <ClInclude Include="..\openal-lib\include\xram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\include\al.h">
+    <ClInclude Include="..\openal-lib\include\al.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\lib\include\alc.h">
+    <ClInclude Include="..\openal-lib\include\alc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
