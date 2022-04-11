@@ -11,5 +11,10 @@ in powershell
 then run alclient via
 `./alclient [server ip] [server port]`
 to start.
+example:`./alclient 127.0.0.1 5666`
 
-the default server port is 5666, you can change it in code
+The default server port is 5666, you can change it in code.
+
+# Compile
+
+This project is compiled in vs2019.
