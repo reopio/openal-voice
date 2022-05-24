@@ -52,7 +52,9 @@ int capture_send_data(ALCdevice* rdevice, ALint* sample, char* data, SOCKET* scl
 		alcGetIntegerv(rdevice, ALC_CAPTURE_SAMPLES, 1, sample);
 		if (*sample > BUF_LEN / 2) {
 			alcCaptureSamples(rdevice, data, BUF_LEN / 2);
-			send(*scli, data, BUF_LEN, 0);
+			if (send(*scli, data, BUF_LEN, 0) <= 0) {
+				return 0;
+			}
 
 		}
 	}
@@ -169,6 +171,7 @@ int main(int argc, char** argv) {
 	std::thread ths(capture_send_data, rdevice, &sample, send_data, &scli);
 	cout << "running..." << endl;
 	thr.join();
+	ths.join();
 
 	//recv capturebuffer and play
 	//while (true) {

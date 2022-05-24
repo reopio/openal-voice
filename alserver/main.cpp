@@ -37,7 +37,9 @@ int capture_send_data(ALCdevice* rdevice, ALint* sample, char* data, SOCKET* scl
 		alcGetIntegerv(rdevice, ALC_CAPTURE_SAMPLES, 1, sample);
 		if (*sample > BUF_LEN / 2) {
 			alcCaptureSamples(rdevice, data, BUF_LEN / 2);
-			send(*scli, data, BUF_LEN, 0);
+			if (send(*scli, data, BUF_LEN, 0) <= 0) {
+				return 0;
+			}
 		}
 
 	}
@@ -83,7 +85,7 @@ int recv_play_data(ALuint* asource, SOCKET* scli, char* data) {
 }
 
 
-int main() {
+int comm() {
 
 
 	//var
@@ -178,7 +180,8 @@ int main() {
 	std::thread thr(recv_play_data, &asource, &scli, recv_data);
 	cout << "runing..." << endl;
 	thr.join();
-
+	ths.join();
+	
 
 	alSourceStop(asource);
 	alDeleteSources(1, &asource);
@@ -197,7 +200,18 @@ int main() {
 
 	WSACleanup();
 
+	
 
+	return 0;
+}
+
+int main() {
+
+	while (true) {
+		comm();
+		Sleep(100);
+		//cout << "adfadd" << endl;
+	}
 
 	return 0;
 }
